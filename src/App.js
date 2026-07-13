@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -32,7 +32,8 @@ function App() {
     formData.append("image", file);
 
     try {
-      const res = await fetch("http://localhost:5000/predict", {
+      // 👇 Use your live Render backend
+      const res = await fetch("https://mridetectorbackend.onrender.com/predict", {
         method: "POST",
         body: formData,
       });
@@ -138,6 +139,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
